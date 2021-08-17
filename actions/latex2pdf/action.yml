@@ -1,0 +1,15 @@
+name: 'LaTeX to PDF'
+description: 'Compile LaTeX into PDF file'
+inputs:
+  latex_path:
+    description: 'The path of source LaTeX file'
+    required: true
+    default: './main.tex'
+outputs:
+  pdf_path:
+    description: 'The path of PDF'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.latex_path }}

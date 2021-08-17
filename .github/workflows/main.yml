@@ -1,0 +1,32 @@
+on: [push]
+
+jobs:
+  # latex2pdf2gh:
+  #   runs-on: ubuntu-latest
+  #   name: resume
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+  #     - name: Hello world action step
+  #       id: hello
+  #       uses: actions/hello-world-docker-action@v1
+  #       with:
+  #         latex_path: './main.tex'
+  #     - name: Get the output time
+  #       run: echo "The time was ${{ steps.hello.outputs.time }}"
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: .
+          CLEAN: true

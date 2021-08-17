@@ -1,28 +1,76 @@
 on: [push]
 
 jobs:
-  # latex2pdf2gh:
-  #   runs-on: ubuntu-latest
-  #   name: resume
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #     - name: Hello world action step
-  #       id: hello
-  #       uses: actions/hello-world-docker-action@v1
-  #       with:
-  #         latex_path: './main.tex'
-  #     - name: Get the output time
-  #       run: echo "The time was ${{ steps.hello.outputs.time }}"
-  build_latex:
+  check:
+    name: Check if need to rebuild image
+    outputs:
+      need_rebuild_image: ${{ steps.check_files.outputs.need_rebuild_image }}
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Git repository
+      - name: Checkout code
         uses: actions/checkout@v2
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
         with:
-          root_file: main.tex
+          fetch-depth: 2
+      - name: check modified files
+        id: check_files
+        run: |
+          echo "=============== list modified files ==============="
+          git diff --name-only HEAD^ HEAD
+          
+          echo "========== check paths of modified files =========="
+          git diff --name-only HEAD^ HEAD > files.txt
+          
+          while IFS= read -r line
+          do
+            echo $line
+            if [[ $line = base_image/* ]]; then
+              echo "::set-output name=need_rebuild_image::true"
+              break
+            fi
+          done < files.txt
+
+  build-and-push:
+    name: Build base image and push
+    needs: check
+    if: ${{ needs.check.outputs.need_rebuild_image == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - id: buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: ./base_image
+          file: ./base_image/Dockerfile
+          tags: ghcr.io/mattwang44/resume/texlive-full:latest
+          push: true
+
+  build_latex:
+    runs-on: ubuntu-latest
+    name: resume
+    needs: build-and-push
+    if: ${{ always() }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Compile LaTeX document
+        uses: ./actions/latex2pdf
+        with:
+          latex_path: './main.tex'
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:

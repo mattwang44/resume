@@ -48,9 +48,9 @@
 
 %-------------------------
 % Custom commands
-\newcommand{\resumeItem}[2]{
+\newcommand{\resumeItem}[1]{
   \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
+    {#1 \vspace{-2pt}}
   }
 }
 
@@ -63,7 +63,7 @@
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
+  \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
@@ -73,14 +73,14 @@
 \newcommand{\resumeSubSubheading}[2]{
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-5pt}
+    \end{tabular*}\vspace{-5pt} 
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
-\renewcommand{\labelitemii}{$\circ$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
@@ -92,119 +92,131 @@
 \begin{document}
 
 %----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{https://mattwang44.github.io/}{\Large Wei-Hsiang Wang}} & \href{mailto:mattwang44@gmail.com}{mattwang44@gmail.com}\\
-  \href{https://mattwang44.github.io/}{https://mattwang44.github.io/} & +886-988-211-953 \\
-\end{tabular*}
+\begin{center}
+  \textbf{\Large Wei-Hsiang (Matt) Wang} \\
+  \underline{\href{mailto:mattwang44@gmail.com}{mattwang44@gmail.com}} {{$\vert$}}
+  \underline{\href{https://mattwang44.dev/}{mattwang44.dev}} {{$\vert$}}
+  \underline{\href{https://github.com/mattwang44/}{GitHub}} {{$\vert$}}
+  \underline{\href{https://www.linkedin.com/in/weihsiang-wang/}{LinkedIn}} {{$\vert$}}
+  {+886-988-211-953}
+\end{center}
 
-
-%-----------EDUCATION-----------------
-\section{Education}
+%-----------EXPERIENCE-----------------
+\section{Work Experience}
   \resumeSubHeadingListStart
+    % Umbo CV
     \resumeSubheading
-      {National Taiwan University}{Taipei, Taiwan}
-      {M.S., Mechanical Engineering}{Aug. 2016 -- Aug. 2018}
+      {Umbo Computer Vision}{Taipei, Taiwan}
+      {Backend Engineer}{Mar 2019 - Present}
+      \resumeItemListStart
+        \resumeItem{Enhanced filtration logic with score-based time-weighted algorithm. Boosted automation rate for 8\% and achieved 98\% recall rate.}
+        \resumeItem{Revamped critical component from AWS Lambda into standalone server, which is implemented with FastAPI \& Gunicorn and deployed to AWS ECS with Terraform.}
+        \resumeItem{Improved service scalability by reconstructing human-in-the-loop process using AWS API Gateway for WebSocket and AWS Lambda.}
+        \resumeItem{Maintained a MongoDB cluster that stores system metadata from different product lines. Implemented affiliated ETL jobs for monitoring performance of system accuracy and latency.}
+        % \resumeItem{}
+        % \resumeItem{}
+        % \resumeItem{}
+      \resumeItemListEnd
+      
+    \resumeSubSubheading
+      {Software QA Engineer}{Oct 2018 - Feb 2019}
+      \resumeItemListStart
+        \resumeItem{Implemented data visualization \& configuration tool that is commonly-used by PM, FAE, \& engineers.}
+        \resumeItem{Conducted automation \& functional testing on computer-vision-based access control system.}
+      \resumeItemListEnd
+
     \resumeSubheading
-    {National Taiwan University}{Taipei, Taiwan}
-    {B.S., Mechanical Engineering}{Aug. 2012 -- Aug. 2016}
+      {Fugu Fish}{Taipei, Taiwan}
+      {Backend Developer (Contractor)}{Oct 2020 - Dec 2020}
+      \resumeItemListStart
+        \resumeItem{Established a Django server using \href{https://www.django-rest-framework.org/}{Django REST framework (DRF)} \& \href{https://wagtail.io/}{Wagtail CMS} for a government agency.}
+      \resumeItemListEnd
+
   \resumeSubHeadingListEnd
 
 
-%-----------EXPERIENCE-----------------
-% \section{Experience}
-  % \resumeSubHeadingListStart
-
-  %   \resumeSubheading
-  %     {Google}{Mountain View, CA}
-  %     {Software Engineer}{Oct 2016 - Present}
-  %     \resumeItemListStart
-  %       \resumeItem{Tensorflow}
-  %         {TensorFlow is an open source software library for numerical computation using data flow graphs; primarily used for training deep learning models. Worked on APIs and performance for training models on Tensor Processing Units (TPU).}
-  %       \resumeItem{Apache Beam}
-  %         {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines, as well as a set of language-specific SDKs for constructing pipelines and runners.}
-  %     \resumeItemListEnd
-      
-% --------Multiple Positions Heading------------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%-------------------------------------------
-
-    % \resumeSubheading
-    %   {Coursera}{Mountain View, CA}
-    %   {Senior Software Engineer}{Jan 2014 - Oct 2016}
-    %   \resumeItemListStart
-    %     \resumeItem{Notifications}
-    %       {Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing etc.}
-    %     \resumeItem{Nostos}
-    %       {Bulk data processing and injection service from Hadoop to Cassandra and provides a thin REST layer on top for serving offline computed data online.}
-    %     \resumeItem{Workflows}
-    %       {Dataduct an open source workflow framework to create and manage data pipelines leveraging reusables patterns to expedite developer productivity.}
-    %     \resumeItem{Data Collection}
-    %       {Designed the internal survey and crowd sourcing platform which allowed for creating various tasks for crowd sourcing or embedding surveys across the Coursera platform.}
-    %     \resumeItem{Dev Environment}
-    %       {Analytics environment based on docker and AWS, standardized the python and R dependencies. Wrote the core libraries that are shared by all data scientists.}
-    %     \resumeItem{Data Warehousing}
-    %       {Setup, schema design and management of Amazon Redshift. Built an internal app for access to the data using a web interface. Dataduct integration for daily ETL injection into Redshift.}
-    %     \resumeItem{Recommendations}
-    %       {Core service for all recommendation systems at Coursera, currently used on the homepage and throughout the content discovery process. Worked on both offline training and online serving.}
-    %     \resumeItem{Content Discovery}
-    %       {Improved content discovery by building a new onboarding experience on coursera. Using this to personalize the search and browse experience. Also worked on ranking and indexing improvements.}
-    %     \resumeItem{Course Dashboards}
-    %       {Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
-    %   \resumeItemListEnd
-
-    % \resumeSubheading
-    %   {Lucena Research}{Atlanta, GA}
-    %   {Data Scientist}{Summer 2012 and 2013}
-    %   \resumeItemListStart
-    %     \resumeItem{Portfolio Management}
-    %       {Created models for portfolio hedging,  portfolio optimization and price forecasting. Also creating a strategy backtesting engine used for simulating and backtesting strategies.}
-    %     \resumeItem{QuantDesk}
-    %       {Python backend for a web application used by hedge fund managers for portfolio management.}
-    %   \resumeItemListEnd
-
-    % \resumeSubheading
-    %   {Georgia Institute of Technology}{Atlanta, GA}
-    %   {Research and Teaching Assistant}{Jan 2012 - Dec 2013}
-    %   \resumeItemListStart
-    %     \resumeItem{Research Assistant - Machine Learning}
-    %       {Research on machine learning for portfolio hedging and replication algorithms. Modeling low-risk \& continuous-return strategies. Developed the python library QSTK.}
-    %     \resumeItem{Teaching Assistant - Computational Investing}
-    %       {The online course on Coursera, had more than 100,000 students enrolled. It was featured on the 11 Alive News and the Atlanta Journal Constitution. Involved in creating assignment, exams and conducting recitation sessions. Also taught the on-campus version of the course.}
-    %   \resumeItemListEnd
-
-  % \resumeSubHeadingListEnd
-
-
 %-----------PROJECTS-----------------
-% \section{Projects}
-%   \resumeSubHeadingListStart
-%     \resumeSubItem{QuantSoftware Toolkit}
-%       {Open source python library for financial data analysis and machine learning for finance.}
-%     \resumeSubItem{Github Visualization}
-%       {Data Visualization of Git Log data using D3 to analyze project trends over time.}
-%     \resumeSubItem{Recommendation System}
-%       {Music and Movie recommender systems using collaborative filtering on public datasets.}
-%     \resumeSubItem{Mac Setup}
-%       {Book that gives step by step instructions on setting up developer environment on Mac OS.}
-%   \resumeSubHeadingListEnd
+% \section{Selected Projects}    
 
-%
-%--------PROGRAMMING SKILLS------------
-%\section{Programming Skills}
-%  \resumeSubHeadingListStart
-%    \item{
-%      \textbf{Languages}{: Scala, Python, Javascript, C++, SQL, Java}
-%      \hfill
-%      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
-%    }
-%  \resumeSubHeadingListEnd
+%-----------COMMUNITY-----------------
+\section{Community Experience}    
+  \begin{itemize}[leftmargin=*, label={}]
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{Web Team Lead, PyCon Taiwan} - 
+      \textit{repo link: \href{https://github.com/pycontw/pycon.tw}{backend} / \href{https://github.com/pycontw/pycontw-2021}{frontend}} & \textit{\small Sep 2020 - Present}
+    \end{tabular*}\vspace{-5pt}
+    \resumeItemListStart
+      \resumeItem{Led 12 volunteer developers maintaining the official website and proposal-submitting system.}
+      \resumeItem{Revamped frontend of an existing Django full-stack app using Nuxt.js \& DRF.}
+    \resumeItemListEnd
+    
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{Developer, Python Official Documents Translation} - 
+      \href{https://github.com/python/python-docs-zh-tw}{\textit{repo link}} & \textit{\small July 2021 - Present}
+    \end{tabular*}\vspace{-5pt}
+    \resumeItemListStart
+      \resumeItem{Translated Python documents into Traditional Chinese (zh-tw) \& review PRs.}
+      \resumeItem{Established workflows with GitHub Action for CI/CD \& translation source sync.}
+    \resumeItemListEnd
 
+    % \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    %   \textbf{TA, Women in Data Science ML Workshop} & \textit{\small Dec 2019}
+    % \end{tabular*}\vspace{-5pt}
+    % \resumeItemListStart
+    %   \resumeItem{}
+    % \resumeItemListEnd
 
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{Coordinator, Deep Learning Study Group} & \textit{\small Feb 2018 - Sep 2018}
+    \end{tabular*}\vspace{-5pt}
+    \resumeItemListStart
+      \resumeItem{Held weekly meetups focusing on paper reading \& implementation of computer vision techniques using CNN.}
+    \resumeItemListEnd
+    
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{TA, Google AI Boot Camp} & \textit{\small July 2018}
+    \end{tabular*}\vspace{-5pt}
+    \resumeItemListStart
+      \resumeItem{Guided participants to build deep learning programs in Tensorflow with Google Colaboratory.}
+    \resumeItemListEnd
+  \end{itemize}
+
+%-----------CERTIFICATE-----------------
+\section{Certificate}
+  \begin{itemize}[leftmargin=*, label={}]
+    \vspace{-1pt}\item
+      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{GCP Associate Cloud Engineer} - \href{https://www.credential.net/6ed46944-6ab9-4f87-b19e-eea0d4a5517b?key=6f4f5f74408e1291fc997d8842f33f144a89ec669e204a3567c18d4566a4a0bb}{\textit{link}} & \textit{\small June 2020} 
+      \end{tabular*}\vspace{-5pt}
+  \end{itemize}
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \begin{itemize}[leftmargin=*, label={}]
+    \vspace{-1pt}\item
+      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{National Taiwan University} & Taipei, Taiwan \\
+        \textit{\small B.S. \& M.S., Mechanical Engineering (Research Topic: Mechanism Design \& Patent Analysis)} & \textit{\small Aug 2012 -- Aug 2018}
+      \end{tabular*}\vspace{-5pt}
+      % \resumeItemListStart
+      % \resumeItem{Developed scripts/apps to automate tasks in the research on mechanism design \& patent analysis. }
+      % \resumeItem{Related courses: Data Structures, Database, Robotic Control, Microcontroller, Machine Learning.}
+      % \resumeItemListEnd
+  \end{itemize}
+
+%--------TECHNICAL SKILLS------------
+\section{Technical Skills}
+  \begin{itemize}[leftmargin=*, label={}]
+    \small{\vspace{-1pt}\item{
+      \textbf{Languages}{: Python, JavaScript (Node.js)} \\
+      \textbf{Backend Frameworks}{: Express.js, Django, FastAPI, Flask} \\
+      \textbf{Cloud Platforms}{: AWS (EC2, ECS, S3, SQS, Lambda, API Gateway), GCP (GCE, GCS)} \\
+      \textbf{Databases}{: MongoDB, Redis, PostgreSQL} \\
+      \textbf{DevOps}{: Terraform, Serverless, Jenkins, GitHub Action} \\
+      \textbf{Monitoring Tools}{: NewRelic, Grafana, Elasticsearch, Kibana} \\
+      \textbf{Others}{: Git, Nginx, Nuxt.js, TailwindCSS}
+    }}
+  \end{itemize}
 %-------------------------------------------
 \end{document}

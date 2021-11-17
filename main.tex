@@ -17,6 +17,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{fontawesome5}
 \input{glyphtounicode}
 
 \pagestyle{fancy}
@@ -62,17 +63,17 @@
     \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeSubheading}[4]{
+\newcommand{\resumeSubheading}[2]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
+      \textbf{#1} & \textit{\small #2} \\
+      % \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeSubSubheading}[2]{
+\newcommand{\resumeSubSubheading}[1]{
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
+      \textbf{\small#1} \\
     \end{tabular*}\vspace{-5pt} 
 }
 
@@ -92,45 +93,92 @@
 \begin{document}
 
 %----------HEADING-----------------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\Large Wei-Hsiang (Matt) Wang} & {\href{mailto:mattwang44@gmail.com}{\faEnvelope \hspace{1px} \small mattwang44@gmail.com}}\\
+%   & \href{https://github.com/mattwang44/}{\faGithub \hspace{1px} \small github.com/mattwang44} \\
+%   & \href{https://www.linkedin.com/in/weihsiang-wang/}{\faLinkedin \hspace{1px} Wei-Hsaing Wang} \\
+%   & \faPhoneSquare \hspace{1px} \small +886-988-211-953 \\
+%   & \href{https://mattwang44.dev/}{ \faPenSquare \hspace{1px} \small mattwang44.dev}
+% \end{tabular*}
+
 \begin{center}
   \textbf{\Large Wei-Hsiang (Matt) Wang} \\
-  \underline{\href{mailto:mattwang44@gmail.com}{mattwang44@gmail.com}} {{$\vert$}}
-  \underline{\href{https://mattwang44.dev/}{mattwang44.dev}} {{$\vert$}}
-  \underline{\href{https://github.com/mattwang44/}{GitHub}} {{$\vert$}}
-  \underline{\href{https://www.linkedin.com/in/weihsiang-wang/}{LinkedIn}} {{$\vert$}}
-  {+886-988-211-953}
+  \vspace{8px}
+  \href{mailto:mattwang44@gmail.com}{\faEnvelope \hspace{1px} mattwang44@gmail.com} {{$\vert$}}
+  \href{https://github.com/mattwang44/}{\faGithub \hspace{1px} mattwang44} {{$\vert$}}
+  \href{https://www.linkedin.com/in/weihsiang-wang/}{\faLinkedin \hspace{1px} Wei-Hsiang Wang} {{$\vert$}}
+  \href{https://mattwang44.dev/}{ \faPenSquare \hspace{1px} mattwang44.dev} {{$\vert$}}
+  { \faPhoneSquare \hspace{1px} +886-988-211-953}
 \end{center}
 
+%-----------SUMMARY-----------------
+\vspace{-4px}
+\section{Summary}
+  \begin{itemize}[leftmargin=16px]
+    \item\small{{Backend engineer and Python \& Node.js developer.  \vspace{-8pt}}}
+    \item\small{{Experienced in the development of cloud-based machine learning system.  \vspace{-8pt}}}
+    \item\small{{Active contributor \& project lead in Taiwanese Python community.   \vspace{-8pt}}}
+  \resumeItemListEnd
+
 %-----------EXPERIENCE-----------------
+\vspace{8pt}
 \section{Work Experience}
   \resumeSubHeadingListStart
     % Umbo CV
     \resumeSubheading
-      {Umbo Computer Vision}{Taipei, Taiwan}
-      {Backend Engineer}{Mar 2019 - Present}
-      \resumeItemListStart
-        \resumeItem{Enhanced filtration logic with score-based time-weighted algorithm. Boosted automation rate for 8\% and achieved 98\% recall rate.}
-        \resumeItem{Revamped critical component from AWS Lambda into standalone server, which is implemented with FastAPI \& Gunicorn and deployed to AWS ECS with Terraform.}
-        \resumeItem{Improved service scalability by reconstructing human-in-the-loop process using AWS API Gateway for WebSocket and AWS Lambda.}
-        \resumeItem{Maintained a MongoDB cluster that stores system metadata from different product lines. Implemented affiliated ETL jobs for monitoring performance of system accuracy and latency.}
-        % \resumeItem{}
-        % \resumeItem{}
-        % \resumeItem{}
-      \resumeItemListEnd
+      {Backend Engineer - Cloud A.I. Team, Umbo Computer Vision}{Mar. 2019 - Sep. 2021}
       
-    \resumeSubSubheading
-      {Software QA Engineer}{Oct 2018 - Feb 2019}
+      \vspace{4px}
+      \resumeSubSubheading
+        {\hspace{4px}Human-in-the-Loop Service for Boosting Detection Accuracy [Node.js]}
+        \resumeItemListStart
+          \resumeItem{Solved scalability issues by revamping the human-interacting mechanism with AWS API Gateway for WebSocket.}
+          \resumeItem{Enhanced filtration logic based on a time-weighted scoring algorithm, boosting overall automation rate by 8\% while achieving 98\% recall rate.}
+          \resumeItem{Reduced average requesting latency by 30\% through optmizing MongoDB usage, such as rectifying indexes to accommodate usage pattern, refining queries for index-covered query plans, \& adopting read-write separation.}
+          \resumeItem{Built auditing process \& affiliated Grafana dashboards for examining detection accuracy of each pipeline by leveraging excessive human resource. Enabled faster response from engineers to any performance deterioration.}
+        \resumeItemListEnd
+
+      \vspace{4px}
+      \resumeSubSubheading
+        {\hspace{4px}CV Detection Services of Event-based \& Stream-based Product [Python]}
+        \resumeItemListStart
+          \resumeItem{Developed multiple event-filtering logic based on motion value, analysis on output masks from deep learning model, \& human-examining feedback. Raised system automate rate from 40\% to 90\% while achieving 10x channel growth.}
+          \resumeItem{Reconstructed event-based service from AWS Lambda function to an HTTP server built on FastAPI \& AWS ECS.}
+          \resumeItem{Improved server throughput by 20\% through serving with Gunicorn, handling I/O-bounded tasks asynchronously, \& leveraging FFmpeg in GIF generation, with metrics from load testing using \href{https://locust.io/}{Locust} as proof.}
+          \resumeItem{Delivered cross-camera human re-identification feature in stream-based product, closing a governmental contract.}
+        \resumeItemListEnd
+
+      \vspace{4px}
+      \resumeSubSubheading
+        {\hspace{4px}System \& Per-Camera Performance Monitoring }
+        \resumeItemListStart
+          \resumeItem{Implemented ETL cronjobs deployed to AWS EKS with Helm for importing event metadata to Elasticsearch.}
+          \resumeItem{Built cross-services latency tracing dashabords and affiliated alerting by leveraging New Relic Tracing \& Grafana.}
+          \resumeItem{Developed operational dashboard for tracking cameras with poor detection accuracy or high resource consumption.}
+        \resumeItemListEnd
+
+      \vspace{4px}
+      \resumeSubSubheading
+        {\hspace{4px}Data Collction for Automatic Machine Learning Platform}
+        \resumeItemListStart
+          \resumeItem{Maintained labeling platform and involved in the coordination of both in-house \& out-sourcing labelers.}
+          \resumeItem{Integrated AWS Lambda with Slack command used by FAE/Sales to import miss-detected events to pipeline.}
+        \resumeItemListEnd
+
+    \vspace{8px}
+    \resumeSubheading
+      {Software QA Engineer - QA team, Umbo Computer Vision}{Oct. 2018 - Feb. 2019}
       \resumeItemListStart
-        \resumeItem{Implemented data visualization \& configuration tool that is commonly-used by PM, FAE, \& engineers.}
-        \resumeItem{Conducted automation \& functional testing on computer-vision-based access control system.}
+        \resumeItem{Implemented a web-based panel for per-camera configuration, which is commonly used across the company.}
+        \resumeItem{Conducted automated \& functional testing and supported composing the installation manual.}
       \resumeItemListEnd
 
-    \resumeSubheading
-      {Fugu Fish}{Taipei, Taiwan}
-      {Backend Developer (Contractor)}{Oct 2020 - Dec 2020}
-      \resumeItemListStart
-        \resumeItem{Established a Django server using \href{https://www.django-rest-framework.org/}{Django REST framework (DRF)} \& \href{https://wagtail.io/}{Wagtail CMS} for a government agency.}
-      \resumeItemListEnd
+    % \resumeSubheading
+    %   {Fugu Fish}{Taipei, Taiwan}
+    %   {Backend Developer (Contractor)}{Oct 2020 - Dec 2020}
+    %   \resumeItemListStart
+    %     \resumeItem{Established a Django server using \href{https://www.django-rest-framework.org/}{Django REST framework (DRF)} \& \href{https://wagtail.io/}{Wagtail CMS} for a government agency.}
+    %   \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
@@ -138,66 +186,16 @@
 %-----------PROJECTS-----------------
 % \section{Selected Projects}    
 
-%-----------COMMUNITY-----------------
-\section{Community Experience}    
-  \begin{itemize}[leftmargin=*, label={}]
-    \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{Web Team Lead, PyCon Taiwan} - 
-      \textit{repo link: \href{https://github.com/pycontw/pycon.tw}{backend} / \href{https://github.com/pycontw/pycontw-2021}{frontend}} & \textit{\small Sep 2020 - Present}
-    \end{tabular*}\vspace{-5pt}
-    \resumeItemListStart
-      \resumeItem{Led 12 volunteer developers maintaining the official website and proposal-submitting system.}
-      \resumeItem{Revamped frontend of an existing Django full-stack app using Nuxt.js \& DRF.}
-    \resumeItemListEnd
-    
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{Developer, Python Official Documents Translation} - 
-      \href{https://github.com/python/python-docs-zh-tw}{\textit{repo link}} & \textit{\small July 2021 - Present}
-    \end{tabular*}\vspace{-5pt}
-    \resumeItemListStart
-      \resumeItem{Translated Python documents into Traditional Chinese (zh-tw) \& review PRs.}
-      \resumeItem{Established workflows with GitHub Action for CI/CD \& translation source sync.}
-    \resumeItemListEnd
-
-    % \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-    %   \textbf{TA, Women in Data Science ML Workshop} & \textit{\small Dec 2019}
-    % \end{tabular*}\vspace{-5pt}
-    % \resumeItemListStart
-    %   \resumeItem{}
-    % \resumeItemListEnd
-
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{Coordinator, Deep Learning Study Group} & \textit{\small Feb 2018 - Sep 2018}
-    \end{tabular*}\vspace{-5pt}
-    \resumeItemListStart
-      \resumeItem{Held weekly meetups focusing on paper reading \& implementation of computer vision techniques using CNN.}
-    \resumeItemListEnd
-    
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{TA, Google AI Boot Camp} & \textit{\small July 2018}
-    \end{tabular*}\vspace{-5pt}
-    \resumeItemListStart
-      \resumeItem{Guided participants to build deep learning programs in Tensorflow with Google Colaboratory.}
-    \resumeItemListEnd
-  \end{itemize}
-
-%-----------CERTIFICATE-----------------
-\section{Certificate}
-  \begin{itemize}[leftmargin=*, label={}]
-    \vspace{-1pt}\item
-      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{GCP Associate Cloud Engineer} - \href{https://www.credential.net/6ed46944-6ab9-4f87-b19e-eea0d4a5517b?key=6f4f5f74408e1291fc997d8842f33f144a89ec669e204a3567c18d4566a4a0bb}{\textit{link}} & \textit{\small June 2020} 
-      \end{tabular*}\vspace{-5pt}
-  \end{itemize}
 
 %-----------EDUCATION-----------------
+\vspace{8px}
 \section{Education}
   \begin{itemize}[leftmargin=*, label={}]
     \vspace{-1pt}\item
       \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{National Taiwan University} & Taipei, Taiwan \\
-        \textit{\small B.S. \& M.S., Mechanical Engineering (Research Topic: Mechanism Design \& Patent Analysis)} & \textit{\small Aug 2012 -- Aug 2018}
+        \textbf{National Taiwan University} & \\
+        \textit{\small M.S., Mechanical Engineering (Research Topic: Mechanism Design \& Patent Analysis)} & \textit{\small Aug. 2016 -- Aug. 2018} \\
+        \textit{\small B.S., Mechanical Engineering} & \textit{\small Aug. 2012 -- Aug. 2016} \\
       \end{tabular*}\vspace{-5pt}
       % \resumeItemListStart
       % \resumeItem{Developed scripts/apps to automate tasks in the research on mechanism design \& patent analysis. }
@@ -206,17 +204,100 @@
   \end{itemize}
 
 %--------TECHNICAL SKILLS------------
+\vspace{4px}
 \section{Technical Skills}
   \begin{itemize}[leftmargin=*, label={}]
     \small{\vspace{-1pt}\item{
       \textbf{Languages}{: Python, JavaScript (Node.js)} \\
       \textbf{Backend Frameworks}{: Express.js, Django, FastAPI, Flask} \\
-      \textbf{Cloud Platforms}{: AWS (EC2, ECS, S3, SQS, Lambda, API Gateway), GCP (GCE, GCS)} \\
-      \textbf{Databases}{: MongoDB, Redis, PostgreSQL} \\
-      \textbf{DevOps}{: Terraform, Serverless, Jenkins, GitHub Action} \\
-      \textbf{Monitoring Tools}{: NewRelic, Grafana, Elasticsearch, Kibana} \\
-      \textbf{Others}{: Git, Nginx, Nuxt.js, TailwindCSS}
+      \textbf{Cloud Services}{: AWS (EC2, S3, ECS, SQS, Lambda, API Gateway), GCP (GCE, GCS)} \\
+      \textbf{Databases}{: MongoDB, Redis, SQL} \\
+      \textbf{DevOps}{: Terraform, Serverless, GitHub Action, Jenkins, TravisCI} \\
+      \textbf{Monitoring \& Logging}{: New Relic, Grafana, Elasticsearch, Kibana} \\
+      \textbf{Others}{: Nginx, Vue.js (Nuxt.js), React, TailwindCSS}
     }}
   \end{itemize}
+
+  \pagebreak
+
+  %-----------COMMUNITY-----------------
+  \section{Community Experience}   
+    \begin{itemize}[leftmargin=*, label={}]
+      \vspace{-2pt}\item
+
+      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{Web Team Lead/Member, PyCon Taiwan} 
+        & \textit{\small Mar. 2020 - Present}
+      \end{tabular*}\vspace{-5pt}
+      \resumeItemListStart
+        \resumeItem{Led 11 volunteer developers maintaining the 
+          \href{https://tw.pycon.org/2021}{official website}
+          \& proposal-submitting/reviewing system in Django.}
+        \resumeItem{Built the frontend from ground up with Nuxt.js replacing old Django templates for lower maintenance cost and better support of SEO \& i18n.}
+        % \resumeItem{ - Colaborated with multiple teams for better UX of attendee \& proposal submitters.}
+      \resumeItemListEnd
+      
+      \vspace{4px}
+      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \href{ https://github.com/python/python-docs-zh-tw }
+          {\textbf{Coordinator \& Translator, Python Official Documents Translation (zh\_TW)} }
+        & \textit{\small July 2021 - Present}
+      \end{tabular*}\vspace{-5pt}
+      \resumeItemListStart
+        \resumeItem{Standardized translating workflows, unified translated wordings, \& hosted monthly meetups.}
+        \resumeItem{Automated translation source syncing process and established CI/CD using GitHub Action.}
+      \resumeItemListEnd
+
+      % \vspace{4px}
+      % \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      %   \textbf{TA, Women in Data Science MLCC Workshop} & \textit{\small Dec 2019}
+      % \end{tabular*}\vspace{-5pt}
+      % \resumeItemListStart
+      %   \resumeItem{}
+      % \resumeItemListEnd
+
+      \vspace{4px}
+      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{Coordinator \& Speaker, Deep Learning Study Group} 
+        & \textit{\small Feb. 2018 - Sep. 2018}
+      \end{tabular*}\vspace{-5pt}
+      \resumeItemListStart
+        \resumeItem{Held weekly meetups focusing on the convolutional neural networks (CNN) papers\
+        in computer vision domain \& the model implementation in PyTorch.}
+      \resumeItemListEnd
+
+      \vspace{4px}
+      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{Teaching Assistant, Google Taiwan AI Bootcamp} & \textit{\small July 2018}
+      \end{tabular*}\vspace{-5pt}
+      \resumeItemListStart
+        \resumeItem{Guided participants to build deep learning models in Tensorflow on Google Colaboratory.}
+      \resumeItemListEnd
+    \end{itemize}
+
+
+%-----------CERTIFICATE-----------------
+\section{Certificate}
+  \begin{itemize}[leftmargin=*, label={}]
+    \vspace{-1pt}\item
+      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \href{https://www.credential.net/6ed46944-6ab9-4f87-b19e-eea0d4a5517b}
+        {\textbf{Google Cloud Certified Associate Cloud Engineer}}
+        & \textit{\small June 2020} 
+      \end{tabular*}
+
+      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \href{https://www.credential.net/f9e5b522-87ec-4e3e-bf3e-d65d4e760d1c}
+        {\textbf{Redis Certified Developer}}
+        & \textit{\small Nov 2021} 
+      \end{tabular*}
+
+      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \href{https://www.credly.com/badges/adcca0d4-b53f-4829-92b5-8262c53049f5}
+        {\textbf{HashiCorp Certified: Terraform Associate}}
+        & \textit{\small Nov 2021} 
+      \end{tabular*}
+  \end{itemize}
+
 %-------------------------------------------
 \end{document}

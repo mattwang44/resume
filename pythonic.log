@@ -2,8 +2,8 @@ This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded forma
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**pythonic.tex
+(./pythonic.tex
 LaTeX2e <2021-11-15>
 L3 programming layer <2021-11-12>
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
@@ -292,8 +292,8 @@ tawesome5
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fontawesome5/fontawesome5-mapping
 .def)))
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pdftex/glyphtounicode.tex)
-No file main.aux.
-\openout1 = `main.aux'.
+No file pythonic.aux.
+\openout1 = `pythonic.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
 LaTeX Font Info:    ... okay on input line 93.
@@ -344,7 +344,7 @@ LaTeX Info: Redefining \ref on input line 93.
 LaTeX Info: Redefining \pageref on input line 93.
 LaTeX Info: Redefining \nameref on input line 93.
 \@outlinefile=\write3
-\openout3 = `main.out'.
+\openout3 = `pythonic.out'.
 
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on i
 nput line 107.
@@ -394,24 +394,24 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 (fancyhdr)                Make it at least 4.08003pt, for example:
 (fancyhdr)                \setlength{\footskip}{4.08003pt}.
 
-[2] (./main.aux)
+[2] (./pythonic.aux)
 
-Package rerunfilecheck Warning: File `main.out' has changed.
+Package rerunfilecheck Warning: File `pythonic.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
-Package rerunfilecheck Info: Checksums for `main.out':
+Package rerunfilecheck Info: Checksums for `pythonic.out':
 (rerunfilecheck)             Before: <no file>
 (rerunfilecheck)             After:  9A4CD33A8EADC047E6A7BC33C0DB2A52;657.
  ) 
 Here is how much of TeX's memory you used:
  13419 strings out of 478371
- 233404 string characters out of 5848526
- 547365 words of memory out of 5000000
+ 233448 string characters out of 5848526
+ 547377 words of memory out of 5000000
  31375 multiletter control sequences out of 15000+600000
  410635 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,11n,63p,298b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,11n,63p,302b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free2.enc}
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc
@@ -428,7 +428,7 @@ public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/pub
 lic/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/publi
 c/cm-super/sfrm1095.pfb>
-Output written on main.pdf (2 pages, 168393 bytes).
+Output written on pythonic.pdf (2 pages, 168395 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream

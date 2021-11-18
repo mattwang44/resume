@@ -2,12 +2,12 @@ name: 'LaTeX to PDF'
 description: 'Compile LaTeX into PDF file'
 inputs:
   latex_path:
-    description: 'The path of source LaTeX file'
+    description: 'The path of source LaTeX files'
     required: true
-    default: './main.tex'
+    default: './'
 outputs:
   pdf_path:
-    description: 'The path of PDF'
+    description: 'The path of PDFs'
 runs:
   using: 'docker'
   image: 'Dockerfile'

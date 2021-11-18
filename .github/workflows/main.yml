@@ -23,7 +23,7 @@ jobs:
           while IFS= read -r line
           do
             echo $line
-            if [[ $line = base_image/* ]]; then
+            if [[ $line = base_image/* ]] || [[ $line = actions/* ]]; then
               echo "::set-output name=need_rebuild_image::true"
               break
             fi
@@ -69,8 +69,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Compile LaTeX document
         uses: ./actions/latex2pdf
-        with:
-          latex_path: './main.tex'
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:

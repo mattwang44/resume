@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.11.18)  18 NOV 2021 07:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.11.18)  23 NOV 2021 09:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -405,10 +405,10 @@ Package rerunfilecheck Info: Checksums for `pythonic.out':
 (rerunfilecheck)             After:  9A4CD33A8EADC047E6A7BC33C0DB2A52;657.
  ) 
 Here is how much of TeX's memory you used:
- 13419 strings out of 478371
- 233448 string characters out of 5848526
+ 13420 strings out of 478371
+ 233460 string characters out of 5848526
  547377 words of memory out of 5000000
- 31375 multiletter control sequences out of 15000+600000
+ 31376 multiletter control sequences out of 15000+600000
  410635 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,11n,63p,302b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -428,7 +428,7 @@ public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/pub
 lic/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/publi
 c/cm-super/sfrm1095.pfb>
-Output written on pythonic.pdf (2 pages, 168395 bytes).
+Output written on pythonic.pdf (2 pages, 169021 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream

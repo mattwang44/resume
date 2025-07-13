@@ -1,9 +1,3 @@
-%-------------------------
-% Resume in Latex
-% Author : Sourabh Bajaj
-% License : MIT
-%------------------------
-
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
@@ -55,7 +49,6 @@
   }
 }
 
-% Just in case someone needs a heading that does not need to be in a list
 \newcommand{\resumeHeading}[4]{
     \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
@@ -93,21 +86,13 @@
 \begin{document}
 
 %----------HEADING-----------------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\Large Wei-Hsiang (Matt) Wang} & {\href{mailto:mattwang44@gmail.com}{\faEnvelope \hspace{1px} \small mattwang44@gmail.com}}\\
-%   & \href{https://github.com/mattwang44/}{\faGithub \hspace{1px} \small github.com/mattwang44} \\
-%   & \href{https://www.linkedin.com/in/weihsiang-wang/}{\faLinkedin \hspace{1px} Wei-Hsaing Wang} \\
-%   & \faPhoneSquare \hspace{1px} \small +886-988-211-953 \\
-%   & \href{https://mattwang44.dev/}{ \faPenSquare \hspace{1px} \small mattwang44.dev}
-% \end{tabular*}
-
 \begin{center}
   \textbf{\Large Wei-Hsiang (Matt) Wang} \\
   \vspace{8px}
   \href{mailto:mattwang44@gmail.com}{\faEnvelope \hspace{1px} mattwang44@gmail.com} {{$\vert$}}
   \href{https://github.com/mattwang44/}{\faGithub \hspace{1px} mattwang44} {{$\vert$}}
   \href{https://www.linkedin.com/in/weihsiang-wang/}{\faLinkedin \hspace{1px} Wei-Hsiang Wang} {{$\vert$}}
-  \href{https://mattwang44.dev/}{ \faPenSquare \hspace{1px} mattwang44.dev} {{$\vert$}}
+  % \href{https://mattwang44.dev/}{ \faPenSquare \hspace{1px} mattwang44.dev} {{$\vert$}}
   { \faPhoneSquare \hspace{1px} +886-988-211-953}
 \end{center}
 
@@ -115,14 +100,51 @@
 \vspace{-8px}
 \section{Summary}
   \begin{itemize}[leftmargin=16px]
-    \item\small{{Python/Node.js developer and backend engineer with hands-on DevOps experience \vspace{-8pt}}}
-    \item\small{{Experienced in the development of cloud-based machine learning systems  \vspace{-8pt}}}
-    \item\small{{Active contributor and project lead in the Taiwanese Python community  \vspace{-8pt}}}
-  \resumeItemListEnd
-
+    \item\small{{Backend engineer with strong DevOps expertise and hands-on experience architecting cloud infrastructure \vspace{-8pt}}}
+    \item\small{{Tech lead delivering scalable distributed systems across domains including computer vision, logistics, and fintech, tailoring architectures to meet evolving product and business needs\vspace{-8pt}}}
+    \item\small{{Active contributor \& event organizer in the Taiwanese Python community  \vspace{-8pt}}}
+    \resumeItemListEnd
 %-----------EXPERIENCE-----------------
 \vspace{4pt}
 \section{Work Experience}
+  \resumeSubHeadingListStart
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{GoFreight} & \textit{Apr 2022 - present} \\
+      \multicolumn{2}{l}{\footnotesize GoFreight is a leading vertical SaaS platform for logistics, optimizing freight forwarding operations and boosting overall efficiency.} \\
+    \end{tabular*}
+    \vspace{0px}
+    
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textit{Senior Backend Engineer \& Tech Lead} & \textit{} \\
+    \end{tabular*}
+    \vspace{0px}
+
+    \resumeSubSubheading
+      {\hspace{8px}Engineering Leadership \& Enablement}
+      \resumeItemListStart
+        \resumeItem{Spearheaded the launch of microservices and formalized GitOps CI/CD conventions (GitHub Action \& ArgoCD) into company-wise service template. Accelerated deployment \& slashed new service launch cycle from 10 days to 3 days.}
+        \resumeItem{Scoped and decomposed major epics into clear deliverables, coordinating cross-functional teams of engineers, PMs, and international vendor partners to hit every go-to-market milestone.}
+        \resumeItem{Mentored three interns and junior engineers through building production integration -- ran pairing sessions and established code-review standards to boost team velocity and code quality.}
+      \resumeItemListEnd
+
+    \resumeSubSubheading
+      {\hspace{8px}Business \& Revenue Growth}
+      \resumeItemListStart
+        \resumeItem{Delivered various revenue-driving products—fintech financing solution, accounting integration, shipment security filing, and cargo tracking—which improved customer satisfaction and opened new upsell channels.}
+        \resumeItem{Architected the API gateway \& Webhook mechanism as the vital interface for GoFreight's extension ecosystem, enabling integrations with large enterprises and partners via various plugins \& adapters.}
+        \resumeItem{Stabilized and sunset the legacy payment platform, then led end-to-end development of a new payment solution, achieving more than a 10x uplift in transaction volume and revenue.}
+      \resumeItemListEnd
+
+    \resumeSubSubheading
+      {\hspace{8px}Service Reliability \& Operational Efficiency}
+      \resumeItemListStart
+        \resumeItem{Partnered with DevOps to introduce Grafana dashboards and alerting on CloudWatch, Elasticsearch, and Snowflake sources, standardizing incident response playbooks and cutting manual monitoring duration by 5 hours per week.}
+        \resumeItem{Built executive dashboards that accelerate metrics reporting by 80\% leveraging customized usage-collecting library, Snowflake, dbt, \& Metabase, providing real-time product adoption insights and enabling data-driven decisions.}
+        \resumeItem{Automated onboarding/transition workflows with internal UI to reduce operational tasks and accelerate time-to- value for new integrations.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
   \resumeSubHeadingListStart
     \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
@@ -132,103 +154,99 @@
     \vspace{0px}
     
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textit{Backend Engineer - Cloud AI Team} & \textit{Mar 2019 - Sep 2021} \\
+      \textit{Backend Engineer - Cloud AI Team} & \textit{} \\
     \end{tabular*}
       \vspace{0px}
       \resumeSubSubheading
-        {\hspace{8px}Human-in-the-Loop Service for Boosting Detection Accuracy (Node.js)}
+        {\hspace{8px}CV Detection Services \& Per-Video-Channel Performance Monitoring}
+        \resumeItemListStart
+          \resumeItem{Developed multiple event-filtering logic based on motion value, deep-learning-model output mask analysis, and human-examining feedback. Raised system automate rate from 40\% to 90\% while sustaining 10x channel growth.}
+          \resumeItem{Reconstructed event-based detection service from AWS Lambda to an HTTP server built on FastAPI \& AWS ECS.}
+          \resumeItem{Improved server throughput by 20\% through serving with Gunicorn, handling I/O-bounded tasks asynchronously, and optimizing GIF generation, with metrics from load testing using \href{https://locust.io/}{Locust} as proof.}
+          \resumeItem{Assembled cross-services latency tracing dashboards with the association of alerting mechanism by utilizing New Relic Tracing, providing end-to-end visibility into the multi-stage AI pipeline's performance.}
+        \resumeItemListEnd
+
+      \vspace{4px}
+      \resumeSubSubheading
+        {\hspace{8px}Human-in-the-Loop Service for Boosting Detection Accuracy}
         \resumeItemListStart
           \resumeItem{Solved scalability issues by revamping the human-interacting mechanism with AWS API Gateway for WebSocket.}
           \resumeItem{Enhanced filtration logic based on a time-weighted scoring algorithm that boosted overall automation rate by 8\% while achieving 98\% recall rate.}
           \resumeItem{Reduced average request latency by 30\% through MongoDB optimization, such as rectifying indexes to accommodate usage patterns, refining queries for index-covered query plans, \& adopting read-write separation.}
-          \resumeItem{Built auditing process (by leveraging human resources) with affiliated Grafana dashboards to examine detection accuracy of each product pipeline. Enabled faster response from engineers to any performance deterioration.}
-        \resumeItemListEnd
-
-      \vspace{4px}
-      \resumeSubSubheading
-        {\hspace{8px}CV Detection Services of Event-based \& Stream-based Product (Python)}
-        \resumeItemListStart
-          \resumeItem{Developed multiple event-filtering logic based on motion value, deep-learning-model output mask analysis, and human-examining feedback. Raised system automate rate from 40\% to 90\% while sustaining 10x channel growth.}
-          \resumeItem{Reconstructed event-based service from AWS Lambda function to an HTTP server built on FastAPI and AWS ECS.}
-          \resumeItem{Improved server throughput by 20\% through serving with Gunicorn, handling I/O-bounded tasks asynchronously, and leveraging FFmpeg in GIF generation, with metrics from load testing using \href{https://locust.io/}{Locust} as proof.}
-          \resumeItem{Delivered cross-camera human re-identification feature in the stream-based product and close a governmental deal.}
-        \resumeItemListEnd
-
-      \vspace{4px}
-      \resumeSubSubheading
-        {\hspace{8px}System \& Per-Camera Performance Monitoring }
-        \resumeItemListStart
           \resumeItem{Implemented ETL cronjobs deployed to AWS EKS with Helm for importing event metadata to Elasticsearch, which powers the customer usage analysis and system healthiness monitoring.}
-          \resumeItem{Assembled cross-services latency tracing dashboards with the association of alerting mechanism by utilizing New Relic Tracing and Grafana.}
-          \resumeItem{Developed operational dashboard for tracking cameras with poor detection accuracy or high resource consumption.}
         \resumeItemListEnd
-
-      \vspace{4px}
-      \resumeSubSubheading
-        {\hspace{8px}Data Collection for Autonomous Machine Learning Platform}
-        \resumeItemListStart
-          \resumeItem{Maintained labeling platform and coordinated both in-house and out-sourcing labelers.}
-          \resumeItem{Integrated AWS Lambda with Slack command for FAE/Sales to import miss-detected events to the training pipeline.}
-        \resumeItemListEnd
-
-    \vspace{-2px}
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textit{Software QA Engineer - QA team} & \textit{Oct 2018 - Feb 2019} \\
-    \end{tabular*}
-      \vspace{-2px}
-      \resumeItemListStart
-        \resumeItem{Produced a web-based panel for per-camera configuration that had been used intensively across the company.}
-        \resumeItem{Conducted automated and functional testing while composing a series of comprehensive installation manuals.}
-      \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
-%--------TECHNICAL SKILLS------------
-\vspace{4px}
-\section{Technical Skills}
-  \begin{itemize}[leftmargin=*, label={}]
-    \small{\vspace{-1pt}\item{
-      \textbf{Languages}{: Python, JavaScript (Node.js)} \\
-      \textbf{Backend Frameworks}{: Express.js, Django, FastAPI, Flask} \\
-      \textbf{Cloud Services}{: AWS (EC2, S3, ECS, SQS, Lambda, API Gateway), GCP (GCE, GCS)} \\
-      \textbf{Databases}{: MongoDB, Redis, SQL} \\
-      \textbf{DevOps}{: Terraform, Serverless, GitHub Actions, Jenkins, TravisCI} \\
-      \textbf{Monitoring \& Logging}{: New Relic, Grafana, Elasticsearch, Kibana} \\
-      \textbf{Others}{: Nginx, Vue.js (Nuxt.js), TailwindCSS}
-    }}
-  \end{itemize}
-
   \pagebreak
 
-  %-----------EDUCATION-----------------
-  \section{Education}
-    \begin{itemize}[leftmargin=*, label={}]
-      \vspace{-1pt}\item
-        \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-          \textbf{National Taiwan University} & \\
-          \textit{\small M.S., Mechanical Engineering (Research Topic: Mechanism Design \& Patent Analysis)} & \textit{\small Aug 2016 -- Aug 2018} \\
-          \textit{\small B.S., Mechanical Engineering} & \textit{\small Aug 2012 -- Aug 2016} \\
-        \end{tabular*}\vspace{-5pt}
-        % \resumeItemListStart
-        % \resumeItem{Developed scripts/apps to automate tasks in the research on mechanism design \& patent analysis. }
-        % \resumeItem{Related courses: Data Structures, Database, Robotic Control, Microcontroller, Machine Learning.}
-        % \resumeItemListEnd
-    \end{itemize}
+  % %-----------Projects-----------------
+  % \vspace{4px}
+  % \section{Selected Projects} 
+  %   \resumeSubHeadingListStart
+  %     \vspace{-2pt}\item
+  %     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+  %       \textbf{Poject A} & {}
+  %     \end{tabular*} \vspace{-8px}
+
+  %     \resumeItemListStart
+  %       \resumeItem{item 1.}
+  %     \resumeItemListEnd
+  %   \resumeSubHeadingListEnd
+ 
+  %   \vspace{-12px} 
+  %   \resumeSubHeadingListStart
+  %     \vspace{-2pt}\item
+  %     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+  %       \textbf{Poject B} & {}
+  %     \end{tabular*} \vspace{-8px}
+
+  %     \resumeItemListStart
+  %       \resumeItem{item 2.}
+  %     \resumeItemListEnd
+  %   \resumeSubHeadingListEnd 
+
 
   %-----------COMMUNITY-----------------
   \vspace{4px}
-  \section{Community Experience}  
+  \section{Open Source \& Community Experience} 
+    \resumeSubHeadingListStart
+      \vspace{-2pt}\item
+      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{Python Documentation Community} & {} \\
+        \textit{Event Host \& Contributor} & \textit{July 2021 - Present} 
+      \end{tabular*} \vspace{-8px}
+      \resumeItemListStart
+        \resumeItem{Led volunteers to grow 
+          \href{https://github.com/python/python-docs-zh-tw}{Python official document's Traditional Chinese translation} coverage from 2\% to
+          \href{https://python-docs-translations.github.io/dashboard/}{$\sim$40\%}, and improved contributor efficiency by automating translation workflows and standardizing terminology.}
+        \resumeItem{Hosted monthly Python doc translation meetups with accumulated \textgreater200 participants in the past 3 years, and organized translation workshops at conferences such as
+          \href{https://tw.pycon.org/2024/zh-hant/events/sprints/}{PyCon TW},
+          \href{https://coscup.org/2024/zh-TW/session/ZKLYAZ}{COSCUP},
+          \href{https://conf2024.sciwork.dev/projects}{sciwork}, etc.
+        }
+        \resumeItem{Contributed improvements to the docs of various Python projects
+          (\href{https://github.com/python/cpython/issues?q=(involves\%3Amattwang44\%20OR\%20author\%3Amattwang44)\%20AND\%20label\%3Adocs}{\textit{CPython}},
+          \href{https://github.com/fastapi/fastapi/issues?q=(involves\%3Amattwang44\%20OR\%20author\%3Amattwang44)\%20AND\%20label\%3Alang-zh-hant}{\textit{FastAPI}},
+          etc.) and \href{https://github.com/sphinx-contrib/sphinx-lint/issues?q=involves\%3Amattwang44}{\textit{sphinx-lint}}.
+        }
+        \resumeItem{Co-organized CPython contribution workshop, facilitated participants through code build and setup processes.}
+      \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+    \vspace{-12px} 
     \resumeSubHeadingListStart
       \vspace{-2pt}\item
       \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
         \textbf{PyCon Taiwan} & {} \\
-        \textit{Lead/Member - Web Team} & \textit{Mar 2020 - Present}
+        \textit{Dev Lead \& Mentor} & \textit{Mar 2020 - Oct 2023}
       \end{tabular*} \vspace{-8px}
 
       \resumeItemListStart
-        \resumeItem{Led a team of 11 volunteer developers to maintain the \href{https://tw.pycon.org/2021}{official website} and the proposal submission/review platform in Django hosted on GCP.}
-        \resumeItem{Replaced the old Django templates by rebuilding the frontend from scratch in Nuxt.js to benefit from lower maintenance cost and better support of SEO and i18n.}
-        % \resumeItem{ - Colaborated with multiple teams for better UX of attendee \& proposal submitters.}
+        \resumeItem{Led a team of 10+ volunteer developers to maintain the \href{https://tw.pycon.org}{2021-2023 official website} and \href{https://github.com/pycontw/pycon.tw/issues?q=involves\%3Amattwang44}{the proposal submission/ reviewing platform in Django}.}
+        \resumeItem{Rebuilt \href{https://github.com/pycontw/pycontw-frontend/issues?q=involves\%3Amattwang44+OR+author\%3Amattwang44}{the frontend from scratch in Nuxt.js} to replace the old Django templates for lower development and maintenance cost and better support of SEO and i18n.}
+        \resumeItem{Administrated the GCP infrastructure for dev teams (web, data, and automation) and managed cost structure.}
+        \resumeItem{Coached successor leaders on cross-functional collaboration, stakeholder communication, and project management.}
       \resumeItemListEnd
     \resumeSubHeadingListEnd 
 
@@ -236,67 +254,53 @@
     \resumeSubHeadingListStart
       \vspace{-2pt}\item
       \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{\href{ https://github.com/python/python-docs-zh-tw }{\textbf{Python Official Documents Translation (zh\_TW)} }} & {} \\
-        \textit{Coordinator \& Translator} & \textit{Jul 2021 - Present} 
+        \textbf{Django Community} & {} \\
+        \textit{Contributor} & \textit{2023 - Present}
       \end{tabular*} \vspace{-8px}
       \resumeItemListStart
-        \resumeItem{Standardized translating workflows, systemized translated wordings, and hosted monthly meetups.}
-        \resumeItem{Automated translation source syncing process and established CI/CD pipelines using GitHub Actions.}
-      \resumeItemListEnd
-    \resumeSubHeadingListEnd 
-
-    % \vspace{-12px}
-    % \resumeSubHeadingListStart
-    %   \vspace{-2pt}\item
-    %   \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-    %     \textbf{MLCC Workshop -- Women in Data Science} & {} \\
-    %     \textit{Teaching Assistant} & \textit{Dec 2019} 
-    %   \end{tabular*} \vspace{-8px}
-    %   \resumeItemListStart
-    %     \resumeItem{}
-    %   \resumeItemListEnd
-    % \resumeSubHeadingListEnd 
-
-    \vspace{-12px}
-    \resumeSubHeadingListStart
-      \vspace{-2pt}\item
-      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Deep Learning Study Group} & {} \\
-        \textit{Coordinator \& Speaker} & \textit{Feb 2018 - Sep 2018}
-      \end{tabular*} \vspace{-8px}
-
-      \resumeItemListStart
-        \resumeItem{Held weekly meetups (around 25 members) focusing on the convolutional neural networks (CNN) papers in computer vision domain \& the model implementation in PyTorch.}
+        \resumeItem{Contributed to Django projects such as
+          \href{https://github.com/model-bakers/model_bakery/issues?q=involves\%3Amattwang44}{model\_bakery},
+          \href{https://github.com/hardcoretech/data-spec-validator/issues?q=involves\%3Amattwang44}{data-spec-validator},
+          \href{https://github.com/yychen/dj-registry/issues?q=involves\%3Amattwang44+}{dj-registry}, and
+          \href{https://github.com/django/django-localflavor/issues?q=involves\%3Amattwang44}{django-localflavor}.
+        }
       \resumeItemListEnd
     \resumeSubHeadingListEnd
 
-    \vspace{-12px}
-    \resumeSubHeadingListStart
-      \vspace{-2pt}\item
-      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Google Taiwan AI Bootcamp} & {} \\
-        \textit{Teaching Assistant} & \textit{Jul 2018}
-      \end{tabular*} \vspace{-8px}
-      \resumeItemListStart
-        \resumeItem{Mentored participants to build deep learning models in Tensorflow on Google Colaboratory.}
-      \resumeItemListEnd
-    \resumeSubHeadingListEnd
-
-  %-----------PROJECTS-----------------
-  % \section{Selected Projects}    
-    
+  %--------TECHNICAL SKILLS------------
+  \vspace{4px}
+  \section{Technical Skills}
+    \begin{itemize}[leftmargin=*, label={}]
+      \vspace{-1pt}\item{
+        \textbf{Languages}{: Python, JavaScript (TypeScript)} \\
+        \textbf{Web Development}{: Django, FastAPI, Flask, Express.js (Node.js), Vue.js/Nuxt.js, TailwindCSS} \\
+        \textbf{Cloud Services}{: AWS (EC2, S3, ECS, SQS, Lambda, API Gateway), GCP} \\
+        \textbf{Databases}{: MySQL, MongoDB, Redis} \\
+        \textbf{CI/CD \& IaC}{: Terraform, Serverless, GitHub Actions, ArgoCD, Jenkins, TravisCI} \\
+        \textbf{Logging \& Monitoring}{: Grafana, Elastic Stack, New Relic} \\
+        \textbf{Data Engineering}{: dbt, Snowflake, BigQuery, Metabase} \\
+      }
+    \end{itemize}
 
   %-----------CERTIFICATE-----------------
   \vspace{4px}
-  \section{Certificate}
+  \section{Selected Certificates}
     \begin{itemize}[leftmargin=*, label={}]
-      \vspace{-1pt}\item
+      \vspace{-1pt}
+      \item
         \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-          \href{https://www.credential.net/6ed46944-6ab9-4f87-b19e-eea0d4a5517b}
-          {\textbf{Google Cloud Certified Associate Cloud Engineer}}
-          & \textit{\small Jun 2020} 
+          \href{https://learn.mongodb.com/c/dYiWu0OfSK2lF6bHyY-XPA}
+          {\textbf{MongoDB Certified Associate Data Modeler}}
+          & \textit{\small Mar 2024} 
         \end{tabular*}
 
+        \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+          \href{https://www.credly.com/badges/a09b790c-0152-4008-97c9-2ca8265eafb6}
+          {\textbf{AWS Certified Solutions Architect - Associate}}
+          & \textit{\small Aug 2023} 
+        \end{tabular*}
+
+        % TODO: Delete this in my next update. It's too old.
         \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
           \href{https://www.credential.net/f9e5b522-87ec-4e3e-bf3e-d65d4e760d1c}
           {\textbf{Redis Certified Developer}}
@@ -314,7 +318,24 @@
           {\textbf{Astronomer Certification for Apache Airflow Fundamentals}}
           & \textit{\small Nov 2021} 
         \end{tabular*}
+
+        \vspace{2pt}
+        \item\small{%
+          \href{https://www.linkedin.com/in/weihsiang-wang/details/certifications/}{\textbf{See additional certifications and course works on my LinkedIn.}}%
+        }
+
     \end{itemize}
+
+    %-----------EDUCATION-----------------
+    \vspace{4px}
+    \section{Education}
+      \begin{itemize}[leftmargin=*, label={}]
+        \vspace{-1pt}\item
+          \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+            \textbf{National Taiwan University} & \\
+            \textit{\small B.S. \& M.S., Mechanical Engineering (Research Topic: Mechanism Design \& Patent Analysis)} & \textit{\small Aug 2012 - Aug 2018} \\
+          \end{tabular*}\vspace{-5pt}
+      \end{itemize}
 
   %-------------------------------------------
 \end{document}

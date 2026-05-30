@@ -1,0 +1,7 @@
+*.pdf
+*.aux
+*.log
+*.out
+*.xdv
+*.synctex.gz
+dist/

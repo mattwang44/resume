@@ -11,8 +11,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage{fontawesome5}
-\input{glyphtounicode}
+\usepackage{fontawesome}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -37,9 +36,6 @@
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-% Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
 
 %-------------------------
 % Custom commands
@@ -88,18 +84,18 @@
 %----------HEADING-----------------
 \begin{center}
   \textbf{\Large Wei-Hsiang (Matt) Wang} \\
-  \vspace{8px}
-  \href{mailto:mattwang44@gmail.com}{\faEnvelope \hspace{1px} mattwang44@gmail.com} {{$\vert$}}
-  \href{https://github.com/mattwang44/}{\faGithub \hspace{1px} mattwang44} {{$\vert$}}
-  \href{https://www.linkedin.com/in/weihsiang-wang/}{\faLinkedin \hspace{1px} Wei-Hsiang Wang} {{$\vert$}}
-  % \href{https://mattwang44.dev/}{ \faPenSquare \hspace{1px} mattwang44.dev} {{$\vert$}}
-  { \faPhoneSquare \hspace{1px} +886-988-211-953}
+  \vspace{8pt}
+  \href{mailto:mattwang44@gmail.com}{\faEnvelope \hspace{1pt} mattwang44@gmail.com} {{$\vert$}}
+  \href{https://github.com/mattwang44/}{\faGithub \hspace{1pt} mattwang44} {{$\vert$}}
+  \href{https://www.linkedin.com/in/weihsiang-wang/}{\faLinkedin \hspace{1pt} Wei-Hsiang Wang} {{$\vert$}}
+  % \href{https://mattwang44.dev/}{ \faPenSquare \hspace{1pt} mattwang44.dev} {{$\vert$}}
+  { \faPhoneSquare \hspace{1pt} +886-988-211-953}
 \end{center}
 
 %-----------SUMMARY-----------------
-\vspace{-8px}
+\vspace{-8pt}
 \section{Summary}
-  \begin{itemize}[leftmargin=16px]
+  \begin{itemize}[leftmargin=16pt]
     \item\small{{Backend engineer with strong DevOps expertise and hands-on experience architecting cloud infrastructure \vspace{-8pt}}}
     \item\small{{Tech lead delivering scalable distributed systems across domains including computer vision, logistics, and fintech, tailoring architectures to meet evolving product and business needs\vspace{-8pt}}}
     \item\small{{Active contributor \& event organizer in the Taiwanese Python community  \vspace{-8pt}}}
@@ -113,15 +109,15 @@
       \textbf{GoFreight} & \textit{Apr 2022 - present} \\
       \multicolumn{2}{l}{\footnotesize GoFreight is a leading vertical SaaS platform for logistics, optimizing freight forwarding operations and boosting overall efficiency.} \\
     \end{tabular*}
-    \vspace{0px}
+    \vspace{0pt}
     
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textit{Senior Backend Engineer \& Tech Lead} & \textit{} \\
     \end{tabular*}
-    \vspace{0px}
+    \vspace{0pt}
 
     \resumeSubSubheading
-      {\hspace{8px}Engineering Leadership \& Enablement}
+      {\hspace{8pt}Engineering Leadership \& Enablement}
       \resumeItemListStart
         \resumeItem{Spearheaded the launch of microservices and formalized GitOps CI/CD conventions (GitHub Action \& ArgoCD) into company-wise service template. Accelerated deployment \& slashed new service launch cycle from 10 days to 3 days.}
         \resumeItem{Scoped and decomposed major epics into clear deliverables, coordinating cross-functional teams of engineers, PMs, and international vendor partners to hit every go-to-market milestone.}
@@ -129,7 +125,7 @@
       \resumeItemListEnd
 
     \resumeSubSubheading
-      {\hspace{8px}Business \& Revenue Growth}
+      {\hspace{8pt}Business \& Revenue Growth}
       \resumeItemListStart
         \resumeItem{Delivered various revenue-driving products—fintech financing solution, accounting integration, shipment security filing, and cargo tracking—which improved customer satisfaction and opened new upsell channels.}
         \resumeItem{Architected the API gateway \& Webhook mechanism as the vital interface for GoFreight's extension ecosystem, enabling integrations with large enterprises and partners via various plugins \& adapters.}
@@ -137,7 +133,7 @@
       \resumeItemListEnd
 
     \resumeSubSubheading
-      {\hspace{8px}Service Reliability \& Operational Efficiency}
+      {\hspace{8pt}Service Reliability \& Operational Efficiency}
       \resumeItemListStart
         \resumeItem{Partnered with DevOps to introduce Grafana dashboards and alerting on CloudWatch, Elasticsearch, and Snowflake sources, standardizing incident response playbooks and cutting manual monitoring duration by 5 hours per week.}
         \resumeItem{Built executive dashboards that accelerate metrics reporting by 80\% leveraging customized usage-collecting library, Snowflake, dbt, \& Metabase, providing real-time product adoption insights and enabling data-driven decisions.}
@@ -151,14 +147,14 @@
       \textbf{Umbo Computer Vision} & \textit{Oct 2018 - Sep 2021} \\
       \multicolumn{2}{l}{\footnotesize UmboCV aims at revolutionizing the surveillance industry with cloud-based AI systems for detecting human or vehicle intrusion.} \\
     \end{tabular*}
-    \vspace{0px}
+    \vspace{0pt}
     
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textit{Backend Engineer - Cloud AI Team} & \textit{} \\
     \end{tabular*}
-      \vspace{0px}
+      \vspace{0pt}
       \resumeSubSubheading
-        {\hspace{8px}CV Detection Services \& Per-Video-Channel Performance Monitoring}
+        {\hspace{8pt}CV Detection Services \& Per-Video-Channel Performance Monitoring}
         \resumeItemListStart
           \resumeItem{Developed multiple event-filtering logic based on motion value, deep-learning-model output mask analysis, and human-examining feedback. Raised system automate rate from 40\% to 90\% while sustaining 10x channel growth.}
           \resumeItem{Reconstructed event-based detection service from AWS Lambda to an HTTP server built on FastAPI \& AWS ECS.}
@@ -166,9 +162,9 @@
           \resumeItem{Assembled cross-services latency tracing dashboards with the association of alerting mechanism by utilizing New Relic Tracing, providing end-to-end visibility into the multi-stage AI pipeline's performance.}
         \resumeItemListEnd
 
-      \vspace{4px}
+      \vspace{4pt}
       \resumeSubSubheading
-        {\hspace{8px}Human-in-the-Loop Service for Boosting Detection Accuracy}
+        {\hspace{8pt}Human-in-the-Loop Service for Boosting Detection Accuracy}
         \resumeItemListStart
           \resumeItem{Solved scalability issues by revamping the human-interacting mechanism with AWS API Gateway for WebSocket.}
           \resumeItem{Enhanced filtration logic based on a time-weighted scoring algorithm that boosted overall automation rate by 8\% while achieving 98\% recall rate.}
@@ -181,25 +177,25 @@
   \pagebreak
 
   % %-----------Projects-----------------
-  % \vspace{4px}
+  % \vspace{4pt}
   % \section{Selected Projects} 
   %   \resumeSubHeadingListStart
   %     \vspace{-2pt}\item
   %     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
   %       \textbf{Poject A} & {}
-  %     \end{tabular*} \vspace{-8px}
+  %     \end{tabular*} \vspace{-8pt}
 
   %     \resumeItemListStart
   %       \resumeItem{item 1.}
   %     \resumeItemListEnd
   %   \resumeSubHeadingListEnd
  
-  %   \vspace{-12px} 
+  %   \vspace{-12pt} 
   %   \resumeSubHeadingListStart
   %     \vspace{-2pt}\item
   %     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
   %       \textbf{Poject B} & {}
-  %     \end{tabular*} \vspace{-8px}
+  %     \end{tabular*} \vspace{-8pt}
 
   %     \resumeItemListStart
   %       \resumeItem{item 2.}
@@ -208,14 +204,14 @@
 
 
   %-----------COMMUNITY-----------------
-  \vspace{4px}
+  \vspace{4pt}
   \section{Open Source \& Community Experience} 
     \resumeSubHeadingListStart
       \vspace{-2pt}\item
       \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
         \textbf{Python Documentation Community} & {} \\
         \textit{Event Host \& Contributor} & \textit{July 2021 - Present} 
-      \end{tabular*} \vspace{-8px}
+      \end{tabular*} \vspace{-8pt}
       \resumeItemListStart
         \resumeItem{Led volunteers to grow 
           \href{https://github.com/python/python-docs-zh-tw}{Python official document's Traditional Chinese translation} coverage from 2\% to
@@ -234,13 +230,13 @@
       \resumeItemListEnd
     \resumeSubHeadingListEnd
 
-    \vspace{-12px} 
+    \vspace{-12pt} 
     \resumeSubHeadingListStart
       \vspace{-2pt}\item
       \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
         \textbf{PyCon Taiwan} & {} \\
         \textit{Dev Lead \& Mentor} & \textit{Mar 2020 - Oct 2023}
-      \end{tabular*} \vspace{-8px}
+      \end{tabular*} \vspace{-8pt}
 
       \resumeItemListStart
         \resumeItem{Led a team of 10+ volunteer developers to maintain the \href{https://tw.pycon.org}{2021-2023 official website} and \href{https://github.com/pycontw/pycon.tw/issues?q=involves\%3Amattwang44}{the proposal submission/ reviewing platform in Django}.}
@@ -250,13 +246,13 @@
       \resumeItemListEnd
     \resumeSubHeadingListEnd 
 
-    \vspace{-12px}
+    \vspace{-12pt}
     \resumeSubHeadingListStart
       \vspace{-2pt}\item
       \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
         \textbf{Django Community} & {} \\
         \textit{Contributor} & \textit{2023 - Present}
-      \end{tabular*} \vspace{-8px}
+      \end{tabular*} \vspace{-8pt}
       \resumeItemListStart
         \resumeItem{Contributed to Django projects such as
           \href{https://github.com/model-bakers/model_bakery/issues?q=involves\%3Amattwang44}{model\_bakery},
@@ -268,7 +264,7 @@
     \resumeSubHeadingListEnd
 
   %--------TECHNICAL SKILLS------------
-  \vspace{4px}
+  \vspace{4pt}
   \section{Technical Skills}
     \begin{itemize}[leftmargin=*, label={}]
       \vspace{-1pt}\item{
@@ -283,7 +279,7 @@
     \end{itemize}
 
   %-----------CERTIFICATE-----------------
-  \vspace{4px}
+  \vspace{4pt}
   \section{Selected Certificates}
     \begin{itemize}[leftmargin=*, label={}]
       \vspace{-1pt}
@@ -327,7 +323,7 @@
     \end{itemize}
 
     %-----------EDUCATION-----------------
-    \vspace{4px}
+    \vspace{4pt}
     \section{Education}
       \begin{itemize}[leftmargin=*, label={}]
         \vspace{-1pt}\item

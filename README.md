@@ -1,6 +1,13 @@
 # resume
 
-Resume with basic github action CI/CD.
+LaTeX resume, auto-built to [mattwang44.github.io/resume/main.pdf](https://mattwang44.github.io/resume/main.pdf) on every push to `main`.
 
-- Auto-compiled from LaTeX to PDF.
-- Served with github page ([link](https://mattwang44.github.io/resume/main.pdf)).
+## Local build
+
+Requires [Tectonic](https://tectonic-typesetting.github.io/):
+
+```bash
+brew install tectonic
+tectonic main.tex
+open main.pdf
+```

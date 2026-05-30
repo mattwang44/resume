@@ -1,78 +1,41 @@
-on: [push]
+name: Build resume
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  check:
-    name: Check if need to rebuild image
-    outputs:
-      need_rebuild_image: ${{ steps.check_files.outputs.need_rebuild_image }}
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v6
+
+      - name: Cache Tectonic bundle
+        uses: actions/cache@v5
         with:
-          fetch-depth: 2
-      - name: check modified files
-        id: check_files
+          path: ~/.cache/Tectonic
+          key: tectonic-${{ runner.os }}-v1
+
+      - name: Install Tectonic
         run: |
-          echo "=============== list modified files ==============="
-          git diff --name-only HEAD^ HEAD
-          
-          echo "========== check paths of modified files =========="
-          git diff --name-only HEAD^ HEAD > files.txt
-          
-          while IFS= read -r line
-          do
-            echo $line
-            if [[ $line = base_image/* ]] || [[ $line = actions/* ]]; then
-              echo "::set-output name=need_rebuild_image::true"
-              break
-            fi
-          done < files.txt
+          curl --proto '=https' --tlsv1.2 -fsSL https://drop-sh.fullyjustified.net | sh
+          sudo mv tectonic /usr/local/bin/
 
-  build-and-push:
-    name: Build base image and push
-    needs: check
-    if: ${{ needs.check.outputs.need_rebuild_image == 'true' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - id: buildx
-        uses: docker/setup-buildx-action@v1
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - uses: docker/build-push-action@v2
-        with:
-          builder: ${{ steps.buildx.outputs.name }}
-          context: ./base_image
-          file: ./base_image/Dockerfile
-          tags: ghcr.io/mattwang44/resume/texlive-full:latest
-          push: true
+      - name: Build PDFs
+        run: |
+          mkdir -p dist
+          for f in *.tex; do
+            tectonic "$f"
+            mv "${f%.tex}.pdf" dist/
+          done
 
-  build_latex:
-    runs-on: ubuntu-latest
-    name: resume
-    needs: build-and-push
-    if: ${{ always() }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Compile LaTeX document
-        uses: ./actions/latex2pdf
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: .
-          CLEAN: true
+          branch: gh-pages
+          folder: dist
+          clean: true
